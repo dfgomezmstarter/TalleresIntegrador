@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from trabajo2 import views as trabajo2_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', trabajo2_views.measure, name='measure'),
 ]
