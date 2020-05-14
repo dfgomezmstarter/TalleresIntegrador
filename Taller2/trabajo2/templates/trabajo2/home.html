@@ -3,12 +3,33 @@
 <br>
 <div class="container">
     <form method="get">
-        <input type="number" name="value">
+        <p>Fecha: <input type="text" name="fecha"></p>
+        <p>Origen:
+            <select name="origen">
+            <option>Sensor en terreno</option>
+            <option>Imagen stelital </option>
+            <option>Imagen dron</option>
+                <option>Dato derivado</option>
+        </select>
+        </p>
+        <p>Valor: <input name="valor" type="number" pattern="^[0-9]+"></p>
+        <p>Codigo censor: <input type="text" name="codigoSensor"></p>
+        <p>Observacion : <input type="text" name="observacion"></p>
         <button type="submit">Adicionar</button>
     </form>
     {% for measure in measures %}
     <ul class="list-group">
-        <li class="list-group-item">{{measure.type}} = {{measure.value}}</li>
+        <li class="list-group-item">
+            Fecha:{{measure.fecha}}
+            <br>
+            Origen: {{measure.origen}}
+            <br>
+            Valor: {{measure.valor}}
+            <br>
+            Codigo sensor: {{measure.codigoSensor}}
+            <br>
+            Observacion: {{measure.observacion}}
+        </li>
     </ul>
     {% endfor %}
 </div>
