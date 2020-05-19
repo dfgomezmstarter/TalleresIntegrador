@@ -12,7 +12,7 @@
                 <option>Dato derivado</option>
         </select>
         </p>
-        <p>Valor: <input name="valor" type="number" pattern="^[0-9]+"></p>
+        <p>Valor: <input name="valor"  min="0" type="number" pattern="^[0-9]+" oninput="validity.valid||(value='');"></p>
         <p>Codigo censor: <input type="text" name="codigoSensor"></p>
         <p>Observacion : <input type="text" name="observacion"></p>
         <button type="submit">Adicionar</button>
